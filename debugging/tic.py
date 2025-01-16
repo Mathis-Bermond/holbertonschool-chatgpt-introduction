@@ -1,7 +1,7 @@
 def print_board(board):
     for row in board:
         print(" | ".join(row))
-        print("-" * 5)
+        print("-" * 10)
 
 
 def check_winner(board):
@@ -18,7 +18,6 @@ def check_winner(board):
 
     if board[0][2] == board[1][1] == board[2][0] and board[0][2] != " ":
         return True
-
     return False
 
 
@@ -39,7 +38,7 @@ def tic_tac_toe():
             print("That spot is already taken! Try again.")
 
     print_board(board)
-    print("Player " + player + " wins!")
+    print("Player " + ("0" if player == "X" else "X") + " wins!")
 
 
 tic_tac_toe()
