@@ -11,5 +11,13 @@ def factorial(n):
 
 
 if __name__ == "__main__":
-    f = factorial(int(sys.argv[1]))
-    print(f)
+    try:
+        num = int(sys.argv[1])
+        if num < 0:
+            print("Error: Input must be a non-negative integer.")
+        else:
+            f = factorial(num)
+except ValueError:
+    print("Please provide a valid integer.")
+except IndexError:
+    print("Usage: {} <number>".format(sys.argv[0]))
